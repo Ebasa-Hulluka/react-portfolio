@@ -1,0 +1,15 @@
+Full-Stack Web Developer
+Node.js, Express.js, MongoDB, React.js | RESTful APIs & Git
+
+About
+Software Engineering student at Jimma University building full-stack web
+applications and professional video content. Udacity Programming Fundamentals
+Nanodegree graduate and freeCodeCamp Responsive Web Design certified.
+
+Core Technologies
+React.js, Tailwind CSS, JavaScript, Node.js, Express.js, REST API Development,
+MongoDB, SQL, Git, Python, PHP.
+
+Services
+Full-stack web development, REST API development, responsive front-end
+interfaces, and professional video editing.

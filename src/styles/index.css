@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+  }
+}
+
+@layer components {
+  .typing-role {
+    display: inline-block;
+    max-width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid currentColor;
+    animation:
+      typing-role 3.2s steps(24, end) infinite alternate,
+      typing-caret 0.72s step-end infinite;
+  }
+
+  .typing-intro {
+    display: inline-block;
+    max-width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #22d3ee;
+    animation:
+      typing-intro 4.2s steps(43, end) infinite alternate,
+      typing-caret 0.72s step-end infinite;
+  }
+
+  .typing-role-dynamic {
+    display: inline-block;
+    min-width: 14ch;
+    white-space: nowrap;
+    border-right: 3px solid currentColor;
+    animation: typing-caret 0.72s step-end infinite;
+  }
+}
+
+@keyframes typing-role {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 24ch;
+  }
+}
+
+@keyframes typing-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing-intro {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 43ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-role {
+    width: auto;
+    animation: none;
+  }
+
+  .typing-intro {
+    width: auto;
+    animation: none;
+  }
+
+  .typing-role-dynamic {
+    animation: none;
+  }
+}
