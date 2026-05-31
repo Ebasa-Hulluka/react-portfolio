@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2 md:max-w-md md:justify-end">
+          <div className="flex flex-wrap gap-2 md:flex-nowrap md:justify-end">
             {navItems.slice(0, 6).map((item) => (
               <a
                 key={item}
