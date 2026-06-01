@@ -61,9 +61,11 @@ export default function Hero() {
             Welcome To <span className="text-cyan-400">My</span>
             <span className="block text-cyan-500 dark:text-cyan-300">Portfolio!</span>
           </h1>
-          <p className="mt-7 flex max-w-3xl flex-wrap items-center gap-x-2 text-xl font-semibold leading-8 text-slate-800 dark:text-white/90 sm:mt-9 sm:text-3xl">
-            <span>I am {profile.name.trim()},</span>
-            <span className="typing-role-dynamic text-cyan-500 dark:text-cyan-300">{typedRole}</span>
+          <p className="mt-7 grid min-h-[5rem] max-w-3xl content-start text-xl font-semibold leading-8 text-slate-800 dark:text-white/90 sm:mt-9 sm:min-h-[4.75rem] sm:text-3xl lg:block lg:min-h-0">
+            <span className="block lg:inline">I am {profile.name.trim()},</span>
+            <span className="typing-role-dynamic block min-h-8 text-cyan-500 dark:text-cyan-300 sm:min-h-10 lg:inline">
+              {typedRole || '\u00a0'}
+            </span>
           </p>
 
           <div className="mt-8 flex flex-col gap-3.5 sm:mt-9 sm:flex-row sm:gap-4">

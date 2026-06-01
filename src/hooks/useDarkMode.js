@@ -5,7 +5,7 @@ export function useDarkMode() {
     if (typeof window === 'undefined') return true;
     const saved = window.localStorage.getItem('portfolio-theme');
     if (saved) return saved === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return true;
   };
 
   const [isDark, setIsDark] = useState(getInitialTheme);
