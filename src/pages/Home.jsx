@@ -1,5 +1,6 @@
 import React from 'react';
 import About from '../components/About';
+import Certifications from '../components/Certifications';
 import Contact from '../components/Contact';
 import Experience from '../components/Experience';
 import Hero from '../components/Hero';
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <Certifications />
       <Projects />
       <Experience />
       <Services />

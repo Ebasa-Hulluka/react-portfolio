@@ -85,3 +85,37 @@
     animation: none;
   }
 }
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    line-height: 1.45;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  a,
+  button,
+  li {
+    letter-spacing: 0.01em;
+  }
+
+  .text-5xl {
+    font-size: 2.6rem;
+  }
+
+  .text-6xl {
+    font-size: 3.1rem;
+  }
+
+  .text-7xl {
+    font-size: 3.6rem;
+  }
+}

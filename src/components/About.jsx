@@ -25,18 +25,18 @@ export default function About() {
           </p>
         </div>
 
-        <div className="mt-16 rounded-lg border border-cyan-100 bg-white p-6 shadow-[0_20px_60px_rgba(8,145,178,0.10)] transition duration-300 hover:scale-[1.01] dark:border-white/10 dark:bg-white/[0.06] sm:p-8">
-          <div className="grid gap-10 lg:grid-cols-[1fr_minmax(340px,0.64fr)] lg:items-start">
+        <div className="mt-10 rounded-lg border border-cyan-100 bg-white p-5 shadow-[0_20px_60px_rgba(8,145,178,0.10)] transition duration-300 hover:scale-[1.01] dark:border-white/10 dark:bg-white/[0.06] sm:mt-16 sm:p-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_minmax(340px,0.64fr)] lg:items-start">
             <div>
-              <h3 className="text-3xl font-extrabold text-slate-800 dark:text-white">{profile.name.trim()}</h3>
-              <p className="mt-7 max-w-3xl text-xl font-normal leading-9 text-slate-700 dark:text-slate-300">
+              <h3 className="text-2xl font-extrabold text-slate-800 dark:text-white sm:text-3xl">{profile.name.trim()}</h3>
+              <p className="mt-4 max-w-3xl text-sm font-normal leading-7 text-slate-700 dark:text-slate-300 sm:mt-7 sm:text-xl sm:leading-9">
                 {profile.summary}
               </p>
 
               <a
                 href={cvFile}
                 download
-                className="mt-8 inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-cyan-400 px-8 text-base font-black text-slate-950 shadow-[0_16px_36px_rgba(6,182,212,0.25)] transition hover:-translate-y-1 hover:bg-cyan-300 focus:outline-none focus:ring-4 focus:ring-cyan-300/30"
+                className="mt-6 inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-cyan-400 px-6 text-sm font-black text-slate-950 shadow-[0_16px_36px_rgba(6,182,212,0.25)] transition hover:-translate-y-1 hover:bg-cyan-300 focus:outline-none focus:ring-4 focus:ring-cyan-300/30 sm:mt-8 sm:min-h-14 sm:px-8 sm:text-base"
               >
                 <FiDownload /> Download My CV
               </a>

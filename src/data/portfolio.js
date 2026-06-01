@@ -26,6 +26,13 @@ import {
   SiTailwindcss,
 } from 'react-icons/si';
 import birthImage from '../assets/birth.jpg';
+import certificate1 from '../assets/certificate1.jpg';
+import certificate2 from '../assets/certificate2.jpg';
+import certificate3 from '../assets/certificate3.jpg';
+import certificate4 from '../assets/certificate4.png';
+import certificate5 from '../assets/certificate5.png';
+import certificate6 from '../assets/certificate6.png';
+import certificate7 from '../assets/certificate7.png';
 import projectManagerImage from '../assets/project manager.png';
 import supermarketImage from '../assets/supermarket.jpg';
 
@@ -54,6 +61,7 @@ export const navItems = [
   'Home',
   'About',
   'Skills',
+  'Certifications',
   'Projects',
   'Experience',
   'Services',
@@ -119,6 +127,16 @@ export const techIcons = [
   { name: 'MongoDB', icon: SiMongodb },
   { name: 'GitHub', icon: FaGithub },
   { name: 'Video Editing', icon: FaVideo },
+];
+
+export const certifications = [
+  { title: 'Certificate 1', image: certificate1 },
+  { title: 'Certificate 2', image: certificate2 },
+  { title: 'Certificate 3', image: certificate3 },
+  { title: 'Certificate 4', image: certificate4 },
+  { title: 'Certificate 5', image: certificate5 },
+  { title: 'Certificate 6', image: certificate6 },
+  { title: 'Certificate 7', image: certificate7 },
 ];
 
 export const projects = [

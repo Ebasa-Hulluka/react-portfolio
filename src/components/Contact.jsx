@@ -40,32 +40,32 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-4 py-20 sm:px-6 lg:px-8">
+    <section id="contact" className="px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
-        <div className="mx-auto mb-14 max-w-4xl text-center">
-          <h2 className="text-4xl font-black text-slate-800 dark:text-white sm:text-5xl">Contact</h2>
-          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-cyan-400" />
-          <p className="mx-auto mt-7 max-w-3xl text-lg font-medium leading-8 text-slate-700 dark:text-slate-300">
+        <div className="mx-auto mb-8 max-w-4xl text-center sm:mb-14">
+          <h2 className="text-3xl font-black text-slate-800 dark:text-white sm:text-5xl">Contact</h2>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-cyan-400 sm:mt-4 sm:w-20" />
+          <p className="mx-auto mt-4 max-w-3xl text-sm font-medium leading-6 text-slate-700 dark:text-slate-300 sm:mt-7 sm:text-lg sm:leading-8">
             Send a message about the website, API, full-stack app, or video project you want to build.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <GlassCard className="rounded-2xl p-6">
-            <h3 className="text-2xl font-black text-slate-800 dark:text-white">Contact Info</h3>
-            <div className="mt-6 space-y-5">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <GlassCard className="rounded-lg p-4 sm:rounded-2xl sm:p-6">
+            <h3 className="text-xl font-black text-slate-800 dark:text-white sm:text-2xl">Contact Info</h3>
+            <div className="mt-4 space-y-4 sm:mt-6 sm:space-y-5">
               {contactItems.map(({ label, value, href, icon: Icon }) => (
                 <a
                   key={label}
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="group flex items-center gap-4 rounded-lg transition hover:-translate-y-1"
+                  className="group flex items-center gap-3 rounded-lg transition hover:-translate-y-1 sm:gap-4"
                 >
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-cyan-400 text-xl text-slate-950 shadow-[0_12px_26px_rgba(6,182,212,0.22)] transition group-hover:rotate-3 group-hover:bg-cyan-300">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-cyan-400 text-lg text-slate-950 shadow-[0_12px_26px_rgba(6,182,212,0.22)] transition group-hover:rotate-3 group-hover:bg-cyan-300 sm:h-12 sm:w-12 sm:rounded-xl sm:text-xl">
                     <Icon />
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-lg font-black text-slate-800 dark:text-white">{label}</span>
+                    <span className="block text-base font-black text-slate-800 dark:text-white sm:text-lg">{label}</span>
                     <span className="mt-0.5 block break-words text-sm font-medium text-slate-700 dark:text-slate-300">
                       {value}
                     </span>
@@ -73,7 +73,7 @@ export default function Contact() {
                 </a>
               ))}
             </div>
-            <h4 className="mt-8 text-xl font-black text-slate-800 dark:text-white">Follow Me</h4>
+            <h4 className="mt-6 text-lg font-black text-slate-800 dark:text-white sm:mt-8 sm:text-xl">Follow Me</h4>
             <div className="mt-4 flex gap-3">
               {profile.socialLinks.map(({ label, href, icon: Icon }) => (
                 <a
@@ -90,7 +90,7 @@ export default function Contact() {
             </div>
           </GlassCard>
 
-          <GlassCard className="rounded-2xl p-6" delay={0.08}>
+          <GlassCard className="rounded-lg p-4 sm:rounded-2xl sm:p-6" delay={0.08}>
             <form className="grid gap-3.5" onSubmit={handleSubmit}>
               <div className="grid gap-3.5 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-bold text-slate-700 dark:text-slate-200">

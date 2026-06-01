@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
 import { navItems } from '../data/portfolio';
+import MobileMenu from './MobileMenu';
 
 export default function Navbar({ isDark, setIsDark }) {
   const [open, setOpen] = useState(false);
@@ -47,9 +48,14 @@ export default function Navbar({ isDark, setIsDark }) {
           </button>
           <button
             type="button"
-            aria-label="Open navigation menu"
+            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
-            className="grid h-10 w-10 place-items-center rounded-lg border border-slate-200 bg-slate-100 text-slate-900 dark:border-white/10 dark:bg-white/10 dark:text-white lg:hidden"
+            className={`grid h-10 w-10 place-items-center rounded-lg border text-slate-900 transition hover:border-cyan-300 hover:text-cyan-600 dark:text-white lg:hidden ${
+              open
+                ? 'border-cyan-300 bg-cyan-400 text-slate-950 shadow-[0_10px_24px_rgba(6,182,212,0.22)] dark:border-cyan-400 dark:bg-cyan-400 dark:text-slate-950'
+                : 'border-slate-200 bg-slate-100 dark:border-white/10 dark:bg-white/10'
+            }`}
           >
             {open ? <FiX /> : <FiMenu />}
           </button>
@@ -57,27 +63,15 @@ export default function Navbar({ isDark, setIsDark }) {
       </nav>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white/95 px-4 py-5 shadow-premium backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/95 lg:hidden">
-          <div className="mx-auto grid max-w-7xl gap-2 text-left">
-            {navItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => {
-                  setActiveItem(item);
-                  setOpen(false);
-                }}
-                className={`block w-full rounded-lg px-4 py-3 text-left text-sm font-bold transition hover:bg-cyan-400/10 hover:pl-5 hover:text-cyan-600 dark:hover:text-cyan-300 ${
-                  activeItem === item
-                    ? 'bg-cyan-400/10 text-cyan-600 shadow-[inset_4px_0_0_rgba(34,211,238,1)] dark:text-cyan-300'
-                    : 'text-slate-700 dark:text-white/80'
-                }`}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-        </div>
+        <MobileMenu
+          activeItem={activeItem}
+          navItems={navItems}
+          onClose={() => setOpen(false)}
+          onSelect={(item) => {
+            setActiveItem(item);
+            setOpen(false);
+          }}
+        />
       )}
     </header>
   );

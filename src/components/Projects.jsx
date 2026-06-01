@@ -8,17 +8,17 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-gradient-to-br from-white via-slate-50 to-cyan-50/30 px-4 py-20 text-slate-950 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-white sm:px-6 lg:px-8"
+      className="bg-gradient-to-br from-white via-slate-50 to-cyan-50/30 px-4 py-12 text-slate-950 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-white sm:px-6 sm:py-20 lg:px-8"
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
-        <div className="mx-auto mb-14 max-w-4xl text-center">
-          <h2 className="text-4xl font-black text-slate-800 dark:text-white sm:text-5xl">Projects</h2>
-          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-cyan-400" />
-          <p className="mx-auto mt-7 max-w-3xl text-lg font-medium leading-8 text-slate-700 dark:text-slate-300">
+        <div className="mx-auto mb-8 max-w-4xl text-center sm:mb-14">
+          <h2 className="text-3xl font-black text-slate-800 dark:text-white sm:text-5xl">Projects</h2>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-cyan-400 sm:mt-4 sm:w-20" />
+          <p className="mx-auto mt-4 max-w-3xl text-sm font-medium leading-6 text-slate-700 dark:text-slate-300 sm:mt-7 sm:text-lg sm:leading-8">
             Real full-stack projects built with practical features, clean interfaces, and production-focused workflows.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.article
               key={project.title}
@@ -39,30 +39,30 @@ export default function Projects() {
                 <a
                   href={project.github}
                   aria-label={`Open ${project.title} on GitHub`}
-                  className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-slate-950/80 text-xl text-white shadow-lg backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-slate-950"
+                  className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full border border-white/20 bg-slate-950/80 text-lg text-white shadow-lg backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 sm:right-4 sm:top-4 sm:h-11 sm:w-11 sm:text-xl"
                 >
                   <FaGithub />
                 </a>
               </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-xl font-black leading-snug text-slate-950 dark:text-white">{project.title}</h3>
-                <p className="mt-3 min-h-40 text-sm leading-7 text-slate-600 dark:text-slate-300">
+              <div className="flex flex-1 flex-col p-4 sm:p-6">
+                <h3 className="text-base font-black leading-snug text-slate-950 dark:text-white sm:text-xl">{project.title}</h3>
+                <p className="mt-2 text-xs leading-6 text-slate-600 dark:text-slate-300 sm:mt-3 sm:min-h-40 sm:text-sm sm:leading-7">
                   {project.description}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-1.5 sm:mt-5 sm:gap-2">
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-bold text-slate-700 transition group-hover:bg-cyan-50 group-hover:text-cyan-700 dark:bg-white/10 dark:text-slate-200 dark:group-hover:bg-cyan-300/10 dark:group-hover:text-cyan-200"
+                      className="rounded-md bg-slate-100 px-2 py-1.5 text-[0.68rem] font-bold text-slate-700 transition group-hover:bg-cyan-50 group-hover:text-cyan-700 dark:bg-white/10 dark:text-slate-200 dark:group-hover:bg-cyan-300/10 dark:group-hover:text-cyan-200 sm:rounded-lg sm:px-3 sm:py-2 sm:text-xs"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pt-4 sm:pt-6">
                   <a
                     href={project.github}
-                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-slate-200 px-4 text-sm font-extrabold text-slate-700 transition hover:border-slate-950 hover:bg-slate-950 hover:text-white dark:border-white/10 dark:text-white dark:hover:bg-white dark:hover:text-slate-950"
+                    className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 px-3 text-xs font-extrabold text-slate-700 transition hover:border-slate-950 hover:bg-slate-950 hover:text-white dark:border-white/10 dark:text-white dark:hover:bg-white dark:hover:text-slate-950 sm:min-h-11 sm:px-4 sm:text-sm"
                   >
                     <FaGithub /> GitHub <FiArrowUpRight />
                   </a>
