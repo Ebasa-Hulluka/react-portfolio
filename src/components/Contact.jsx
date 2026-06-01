@@ -35,6 +35,24 @@ export default function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const projectType = formData.get('projectType');
+    const message = formData.get('message');
+    const subject = encodeURIComponent(`New project message from ${name || 'Portfolio visitor'}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Project Type: ${projectType}`,
+        '',
+        'Message:',
+        message,
+      ].join('\n')
+    );
+
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
     setSent(true);
     event.currentTarget.reset();
   };
@@ -95,27 +113,27 @@ export default function Contact() {
               <div className="grid gap-3.5 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-bold text-slate-700 dark:text-slate-200">
                   Name
-                  <input className="min-h-11 rounded-lg border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-300/20 dark:border-white/10 dark:bg-white/10 dark:text-white" placeholder="Your name" />
+                  <input name="name" required className="min-h-11 rounded-lg border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-300/20 dark:border-white/10 dark:bg-white/10 dark:text-white" placeholder="Your name" />
                 </label>
                 <label className="grid gap-2 text-sm font-bold text-slate-700 dark:text-slate-200">
                   Email
-                  <input type="email" className="min-h-11 rounded-lg border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-300/20 dark:border-white/10 dark:bg-white/10 dark:text-white" placeholder="you@example.com" />
+                  <input name="email" type="email" required className="min-h-11 rounded-lg border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-300/20 dark:border-white/10 dark:bg-white/10 dark:text-white" placeholder="you@example.com" />
                 </label>
               </div>
               <label className="grid gap-2 text-sm font-bold text-slate-700 dark:text-slate-200">
                 Project Type
-                <input className="min-h-11 rounded-lg border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-300/20 dark:border-white/10 dark:bg-white/10 dark:text-white" placeholder="Full-stack app, REST API, frontend UI..." />
+                <input name="projectType" required className="min-h-11 rounded-lg border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-300/20 dark:border-white/10 dark:bg-white/10 dark:text-white" placeholder="Full-stack app, REST API, frontend UI..." />
               </label>
               <label className="grid gap-2 text-sm font-bold text-slate-700 dark:text-slate-200">
                 Message
-                <textarea className="min-h-28 resize-y rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-300/20 dark:border-white/10 dark:bg-white/10 dark:text-white" placeholder="Tell me about your goals, timeline, and expected deliverables." />
+                <textarea name="message" required className="min-h-28 resize-y rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-300/20 dark:border-white/10 dark:bg-white/10 dark:text-white" placeholder="Tell me about your goals, timeline, and expected deliverables." />
               </label>
               <button type="submit" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-slate-950 px-6 text-sm font-extrabold text-white transition hover:-translate-y-1 hover:bg-cyan-500 dark:bg-white dark:text-slate-950 dark:hover:bg-cyan-300">
                 Send Message <FiSend />
               </button>
               {sent && (
                 <div className="rounded-lg border border-cyan-300/50 bg-cyan-400/10 px-4 py-3 text-sm font-bold text-cyan-700 dark:text-cyan-200">
-                  Message captured. Connect this form to EmailJS, Formspree, or your backend API when you deploy.
+                  Your email app is opening with the message addressed to {profile.email}.
                 </div>
               )}
             </form>
