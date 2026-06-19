@@ -81,7 +81,7 @@ export default function Hero() {
   }, [isDeleting, roleIndex, typedRole]);
 
   return (
-    <section id="home" className="section-surface min-h-screen px-4 pb-20 pt-24 text-slate-950 dark:text-slate-100 sm:px-6 sm:pb-28 lg:px-8 lg:pt-28">
+    <section id="home" className="section-surface min-h-screen px-4 pb-12 pt-[5.5rem] text-slate-950 dark:text-slate-100 sm:px-6 sm:pb-28 sm:pt-24 lg:px-8 lg:pt-28">
       {/* Animated Line Background */}
       <AnimatedLineBackground />
 
@@ -107,7 +107,7 @@ export default function Hero() {
         transition={{ duration: 4, repeat: Infinity }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-9 sm:gap-10 lg:grid-cols-[1.12fr_0.88fr]">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-7 sm:gap-10 lg:grid-cols-[1.12fr_0.88fr]">
         <motion.div
           style={{ y: yTransform, opacity: opacityTransform }}
           initial={{ opacity: 0, y: 28 }}
@@ -115,7 +115,7 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
         >
           <motion.h1 
-            className="max-w-4xl text-[2.85rem] font-black leading-[1.06] text-slate-900 dark:text-slate-100 min-[380px]:text-5xl sm:text-6xl lg:text-7xl"
+            className="max-w-4xl text-[2.75rem] font-black leading-[1.06] text-slate-900 dark:text-slate-100 min-[380px]:text-5xl sm:text-6xl lg:text-7xl"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -131,7 +131,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p 
-            className="mt-7 grid min-h-[5rem] max-w-3xl content-start text-xl font-semibold leading-8 text-slate-600 dark:text-slate-300 sm:mt-9 sm:min-h-[4.75rem] sm:text-3xl lg:block lg:min-h-0"
+            className="mt-6 grid min-h-[4.35rem] max-w-3xl content-start text-xl font-semibold leading-8 text-slate-600 dark:text-slate-300 sm:mt-9 sm:min-h-[4.75rem] sm:text-3xl lg:block lg:min-h-0"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -147,7 +147,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div 
-            className="mt-8 flex flex-col gap-3.5 sm:mt-9 sm:flex-row sm:gap-4"
+            className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -180,7 +180,7 @@ export default function Hero() {
         >
           {/* Gradient Border Rectangle */}
           <motion.div
-            className="relative h-80 w-56 overflow-hidden rounded-2xl bg-gradient-to-br from-violet-500 via-cyan-300 to-teal-300 p-1 shadow-2xl sm:h-96 sm:w-64 lg:h-[28rem] lg:w-72"
+            className="relative h-[25rem] w-[78vw] max-w-[21.5rem] overflow-hidden rounded-2xl bg-gradient-to-br from-violet-500 via-cyan-300 to-teal-300 p-1 shadow-2xl sm:h-96 sm:w-64 lg:h-[28rem] lg:w-72"
             animate={{ 
               boxShadow: [
                 '0 0 42px rgba(14, 165, 233, 0.34)',
@@ -211,12 +211,12 @@ export default function Hero() {
 
           {/* Floating decorative elements around image */}
           <motion.div
-            className="absolute -right-6 -top-6 h-20 w-20 rounded-lg border-2 border-violet-300/60 opacity-60"
+            className="absolute -right-2 -top-5 h-16 w-16 rounded-lg border-2 border-violet-300/60 opacity-60 sm:-right-6 sm:-top-6 sm:h-20 sm:w-20"
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
           />
           <motion.div
-            className="absolute -bottom-8 -left-8 h-24 w-24 rounded-full border-2 border-teal-300/60 opacity-50"
+            className="absolute -bottom-5 -left-3 h-20 w-20 rounded-full border-2 border-teal-300/60 opacity-50 sm:-bottom-8 sm:-left-8 sm:h-24 sm:w-24"
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 6, repeat: Infinity }}
           />
