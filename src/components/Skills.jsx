@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import GlassCard from './GlassCard';
+import { FaCode, FaFileAlt } from 'react-icons/fa';
 import { skills } from '../data/portfolio';
 import { AnimatedLineBackground, FloatingElements } from './AnimatedBackground';
+import resumePdf from '../assets/ebasa hulluka (1).pdf';
 
 export default function Skills() {
   const { scrollY } = useScroll();
@@ -11,88 +12,90 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="section-surface px-4 py-12 text-slate-950 dark:text-slate-100 sm:px-6 sm:py-32 lg:px-8"
+      className="section-surface px-4 py-12 text-slate-100 sm:px-6 sm:py-24 lg:px-8"
     >
       <AnimatedLineBackground colorScheme="cyan-purple" />
       <FloatingElements />
 
       <div className="relative mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
-        <motion.div 
-          className="mx-auto mb-8 max-w-4xl text-center sm:mb-14"
+        <motion.div
+          className="overflow-hidden rounded-lg border border-cyan-300/15 bg-[#0b1224]/92 p-4 shadow-[0_22px_80px_rgba(2,6,23,0.42),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:p-5"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          style={{ y: yTransform }}
         >
-          <motion.h2 
-            className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-cyan-500 to-purple-600 dark:from-purple-400 dark:via-cyan-300 dark:to-purple-400 sm:text-5xl"
-            animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            Skills
-          </motion.h2>
-          <motion.div 
-            className="mx-auto mt-3 h-1.5 w-20 rounded-full bg-gradient-to-r from-purple-500 to-cyan-400 sm:mt-4 sm:w-24"
-            animate={{ scaleX: [0.8, 1, 0.8] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          <motion.p 
-            className="mx-auto mt-4 max-w-3xl text-sm font-medium leading-6 text-slate-700 dark:text-slate-300 sm:mt-7 sm:text-lg sm:leading-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            Full-stack skills for building responsive interfaces, reliable APIs, and data-driven web applications.
-          </motion.p>
-        </motion.div>
-        <div className="grid gap-4 sm:gap-5 lg:grid-cols-2" style={{ y: yTransform }}>
-          {skills.map((group, index) => (
-            <GlassCard
-              key={group.category}
-              className="rounded-2xl border-2 border-indigo-300/55 bg-white/85 p-3 shadow-[0_18px_50px_rgba(8,145,178,0.14)] backdrop-blur-sm transition hover:shadow-[0_24px_70px_rgba(79,70,229,0.2)] dark:border-cyan-400/20 dark:bg-slate-900/45 dark:shadow-none sm:rounded-2xl sm:p-5"
-              delay={index * 0.07}
-            >
-              <motion.div 
-                className="mb-3 flex items-center gap-2 border-b border-purple-300/30 dark:border-cyan-400/10 pb-3 sm:mb-4 sm:gap-3"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-purple-400 to-cyan-400 text-base text-white shadow-lg sm:h-10 sm:w-10 sm:text-lg">
-                  <group.icon />
-                </span>
-                <h3 className="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-300 sm:text-lg">
-                  {group.category}
-                </h3>
-              </motion.div>
-              <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                {group.items.map((skill, skillIdx) => (
-                  <motion.div
-                    key={skill.name}
-                    className="group flex min-h-20 flex-col items-center justify-center rounded-xl border-2 border-indigo-300/45 bg-gradient-to-br from-white/90 to-cyan-50/70 p-2 text-center backdrop-blur-sm transition duration-300 hover:border-indigo-500/60 hover:shadow-[0_18px_42px_rgba(79,70,229,0.18)] dark:border-cyan-400/20 dark:from-purple-950/20 dark:to-cyan-950/10 dark:hover:border-cyan-300/60 dark:hover:shadow-[0_18px_42px_rgba(6,182,212,0.15)] sm:min-h-32 sm:p-4"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: skillIdx * 0.03 }}
-                    whileHover={{ y: -5, scale: 1.05 }}
-                  >
-                    <motion.span 
-                      className="mb-2 grid h-8 w-8 place-items-center text-2xl text-gradient-to-r from-purple-500 to-cyan-400 dark:from-purple-400 dark:to-cyan-300 sm:mb-5 sm:h-11 sm:w-11 sm:text-4xl"
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, delay: skillIdx * 0.1, repeat: Infinity }}
-                    >
-                      <skill.icon />
-                    </motion.span>
-                    <span className="text-[0.72rem] font-black leading-tight text-slate-950 dark:text-white sm:text-sm sm:leading-snug">
-                      {skill.name}
-                    </span>
-                  </motion.div>
-                ))}
+          <div className="mb-4 flex flex-col gap-4 border-b border-cyan-300/10 pb-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3">
+              <span className="grid h-11 w-11 place-items-center rounded-lg border border-cyan-300/20 bg-cyan-400/10 text-xl text-cyan-300 shadow-[0_0_28px_rgba(34,211,238,0.14)]">
+                <FaCode />
+              </span>
+              <div>
+                <h2 className="text-xl font-black leading-tight text-white sm:text-2xl">Developer Skills</h2>
+                <p className="mt-1 text-xs font-semibold text-slate-400 sm:text-sm">Professional toolkit & expertise</p>
               </div>
-            </GlassCard>
-          ))}
-        </div>
+            </div>
+
+            <a
+              href={resumePdf}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-slate-600/60 bg-slate-800/75 px-4 text-sm font-black text-slate-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-slate-800 sm:w-auto"
+            >
+              <FaFileAlt className="text-base text-slate-300" />
+              View Resume
+            </a>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-2">
+            {skills.map((group, index) => (
+              <motion.div
+                key={group.category}
+                className="rounded-lg border border-cyan-300/10 bg-slate-900/45 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:p-5"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="grid h-10 w-10 place-items-center rounded-lg border border-cyan-300/10 bg-gradient-to-br from-cyan-400/15 to-purple-500/20 text-lg text-cyan-300 shadow-[0_0_24px_rgba(34,211,238,0.12)]">
+                    <group.icon />
+                  </span>
+                  <div>
+                    <h3 className="text-base font-black text-slate-100 sm:text-lg">{group.category}</h3>
+                    <p className="mt-0.5 text-xs font-medium text-slate-400 sm:text-sm">{group.description}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-4">
+                  {group.items.map((skill, skillIdx) => (
+                    <motion.div
+                      key={skill.name}
+                      className="group flex min-h-28 flex-col items-center justify-center rounded-md border border-cyan-300/10 bg-slate-800/45 p-3 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-slate-800/70 hover:shadow-[0_14px_34px_rgba(6,182,212,0.1)] sm:min-h-32"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.08 + skillIdx * 0.03 }}
+                    >
+                      <motion.span
+                        className={`mb-3 grid h-10 w-10 place-items-center text-4xl ${skill.color}`}
+                        animate={{ scale: [1, 1.06, 1] }}
+                        transition={{ duration: 2.2, delay: skillIdx * 0.12, repeat: Infinity }}
+                      >
+                        <skill.icon />
+                      </motion.span>
+                      <span className="text-xs font-black leading-tight text-slate-100 sm:text-sm">{skill.name}</span>
+                      <span className="mt-2 text-[0.68rem] font-semibold leading-tight text-slate-400 sm:text-xs">
+                        {skill.subtitle}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

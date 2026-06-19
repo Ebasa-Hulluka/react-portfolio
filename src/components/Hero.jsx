@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FiArrowDownRight } from 'react-icons/fi';
 import { profile } from '../data/portfolio';
-import heroImage from '../assets/6050933463902261025.jpg';
+import heroImage from '../assets/optimized/hero-portrait.jpg';
 
 const buttonBase =
   'inline-flex min-h-13 items-center justify-center gap-2 rounded-full px-7 text-base font-black transition focus:outline-none focus:ring-4 focus:ring-cyan-300/30 sm:min-h-14 sm:px-8';
@@ -12,7 +12,7 @@ const rotatingRoles = ['a Full-Stack Web Developer', 'a Video Editor'];
 // Animated Line Background Component
 const AnimatedLineBackground = () => (
   <>
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 hidden overflow-hidden sm:block">
       {/* Animated horizontal lines */}
       <div className="absolute inset-0 opacity-20 dark:opacity-35">
         {[...Array(20)].map((_, i) => (
@@ -87,22 +87,22 @@ export default function Hero() {
 
       {/* Floating Elements */}
       <motion.div
-        className="absolute left-[8%] top-20 h-3 w-3 rotate-45 rounded-sm bg-gradient-to-r from-purple-400 to-cyan-400 shadow-[0_0_24px_rgba(34,211,238,0.35)]"
+        className="absolute left-[8%] top-20 hidden h-3 w-3 rotate-45 rounded-sm bg-gradient-to-r from-purple-400 to-cyan-400 shadow-[0_0_24px_rgba(34,211,238,0.35)] sm:block"
         animate={{ y: [0, -20, 0], rotate: [45, 90, 45] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute left-[12%] top-40 h-6 w-6 rotate-45 border-2 border-gradient-to-r from-cyan-300 to-purple-400"
+        className="absolute left-[12%] top-40 hidden h-6 w-6 rotate-45 border-2 border-gradient-to-r from-cyan-300 to-purple-400 sm:block"
         animate={{ y: [0, 30, 0], rotate: [45, -45, 45] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute right-[10%] top-56 h-4 w-4 rotate-45 bg-gradient-to-br from-cyan-400 to-violet-500 shadow-[0_0_26px_rgba(139,92,246,0.45)]"
+        className="absolute right-[10%] top-56 hidden h-4 w-4 rotate-45 bg-gradient-to-br from-cyan-400 to-violet-500 shadow-[0_0_26px_rgba(139,92,246,0.45)] sm:block"
         animate={{ y: [0, -25, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute right-[5%] bottom-40 h-3 w-3 rounded-full bg-teal-300 shadow-[0_0_24px_rgba(45,212,191,0.45)]"
+        className="absolute right-[5%] bottom-40 hidden h-3 w-3 rounded-full bg-teal-300 shadow-[0_0_24px_rgba(45,212,191,0.45)] sm:block"
         animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 4, repeat: Infinity }}
       />
@@ -195,6 +195,10 @@ export default function Hero() {
               <motion.img
                 src={heroImage}
                 alt={`${profile.name} hero portrait`}
+                width="640"
+                height="800"
+                decoding="async"
+                fetchPriority="high"
                 className="h-full w-full object-cover object-center transition-transform duration-500 dark:brightness-105 dark:contrast-105"
                 whileHover={{ scale: 1.08 }}
               />

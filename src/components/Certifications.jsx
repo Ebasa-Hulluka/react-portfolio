@@ -32,7 +32,10 @@ export default function Certifications() {
                   <img
                     src={certificate.image}
                     alt={`${certificate.title} preview`}
+                    width="812"
+                    height="609"
                     className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-105"
+                    decoding="async"
                     loading="lazy"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />

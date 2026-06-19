@@ -27,7 +27,7 @@ export const AnimatedLineBackground = ({ colorScheme = 'purple-cyan' }) => {
 
   return (
     <>
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 hidden overflow-hidden sm:block">
         {/* Animated horizontal lines */}
         <div className="absolute inset-0 opacity-20 dark:opacity-25">
           {[...Array(20)].map((_, i) => (
@@ -72,22 +72,22 @@ export const AnimatedLineBackground = ({ colorScheme = 'purple-cyan' }) => {
 export const FloatingElements = () => (
   <>
     <motion.div
-      className="absolute left-[5%] top-20 h-3 w-3 rotate-45 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-sm"
+      className="absolute left-[5%] top-20 hidden h-3 w-3 rotate-45 rounded-sm bg-gradient-to-r from-purple-400 to-cyan-400 sm:block"
       animate={{ y: [0, -20, 0], rotate: [45, 90, 45] }}
       transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
     />
     <motion.div
-      className="absolute left-[15%] top-40 h-5 w-5 rotate-45 border-2 border-cyan-300"
+      className="absolute left-[15%] top-40 hidden h-5 w-5 rotate-45 border-2 border-cyan-300 sm:block"
       animate={{ y: [0, 30, 0], rotate: [45, -45, 45] }}
       transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
     />
     <motion.div
-      className="absolute right-[12%] top-56 h-4 w-4 rotate-45 bg-gradient-to-br from-cyan-500 to-purple-500"
+      className="absolute right-[12%] top-56 hidden h-4 w-4 rotate-45 bg-gradient-to-br from-cyan-500 to-purple-500 sm:block"
       animate={{ y: [0, -25, 0] }}
       transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
     />
     <motion.div
-      className="absolute right-[8%] bottom-40 h-3 w-3 bg-purple-400 rounded-full"
+      className="absolute right-[8%] bottom-40 hidden h-3 w-3 rounded-full bg-purple-400 sm:block"
       animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
       transition={{ duration: 4, repeat: Infinity }}
     />

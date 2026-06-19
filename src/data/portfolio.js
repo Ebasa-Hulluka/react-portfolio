@@ -22,10 +22,13 @@ import {
   SiJavascript,
   SiMongodb,
   SiMysql,
+  SiPostgresql,
   SiPostman,
+  SiRedis,
   SiTailwindcss,
 } from 'react-icons/si';
-import birthImage from '../assets/birth.jpg';
+import { VscCode } from 'react-icons/vsc';
+import birthImage from '../assets/optimized/birth-card.jpg';
 import certificate1 from '../assets/certificate1.jpg';
 import certificate2 from '../assets/certificate2.jpg';
 import certificate3 from '../assets/certificate3.jpg';
@@ -33,8 +36,8 @@ import certificate4 from '../assets/certificate4.png';
 import certificate5 from '../assets/certificate5.png';
 import certificate6 from '../assets/certificate6.png';
 import certificate7 from '../assets/certificate7.png';
-import projectManagerImage from '../assets/project manager.png';
-import supermarketImage from '../assets/supermarket.jpg';
+import projectManagerImage from '../assets/optimized/project-manager-card.jpg';
+import supermarketImage from '../assets/optimized/supermarket-card.jpg';
 
 export const profile = {
   name: 'Ebasa Hulluka ',
@@ -78,42 +81,46 @@ export const stats = [
 export const skills = [
   {
     category: 'Frontend Skills',
+    description: 'Building interactive & responsive user interfaces',
     icon: FaReact,
     items: [
-      { name: 'React.js', icon: FaReact },
-      { name: 'Tailwind CSS', icon: SiTailwindcss },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'Responsive Web Design', icon: FaHtml5 },
+      { name: 'React.js', subtitle: 'UI Library', icon: FaReact, color: 'text-cyan-400' },
+      { name: 'Tailwind CSS', subtitle: 'Styling Framework', icon: SiTailwindcss, color: 'text-cyan-300' },
+      { name: 'JavaScript', subtitle: 'Programming Language', icon: SiJavascript, color: 'text-yellow-300' },
+      { name: 'Responsive Web Design', subtitle: 'HTML5 & CSS3', icon: FaHtml5, color: 'text-orange-500' },
     ],
   },
   {
     category: 'Backend Skills',
+    description: 'Server-side logic & system architecture',
     icon: FaNodeJs,
     items: [
-      { name: 'Node.js', icon: FaNodeJs },
-      { name: 'Express.js', icon: SiExpress },
-      { name: 'REST API Development', icon: FaServer },
-      { name: 'Authentication & Integration', icon: FaLock },
+      { name: 'Node.js', subtitle: 'Runtime Environment', icon: FaNodeJs, color: 'text-lime-400' },
+      { name: 'Express.js', subtitle: 'Web Framework', icon: SiExpress, color: 'text-slate-100' },
+      { name: 'REST API Development', subtitle: 'API Architecture', icon: FaServer, color: 'text-cyan-400' },
+      { name: 'Authentication & Integration', subtitle: 'Security & OAuth', icon: FaLock, color: 'text-purple-400' },
     ],
   },
   {
     category: 'Database Skills',
+    description: 'Data storage, management & optimization',
     icon: FaDatabase,
     items: [
-      { name: 'MongoDB', icon: SiMongodb },
-      { name: 'SQL', icon: SiMysql },
-      { name: 'Schema Design', icon: FaProjectDiagram },
-      { name: 'Data Validation', icon: FaCheckCircle },
+      { name: 'MongoDB', subtitle: 'NoSQL Database', icon: SiMongodb, color: 'text-green-400' },
+      { name: 'MySQL', subtitle: 'Relational Database', icon: SiMysql, color: 'text-sky-400' },
+      { name: 'PostgreSQL', subtitle: 'Advanced Database', icon: SiPostgresql, color: 'text-sky-300' },
+      { name: 'Redis', subtitle: 'Cache & Sessions', icon: SiRedis, color: 'text-red-400' },
     ],
   },
   {
     category: 'Tools & Technologies',
+    description: 'Development tools & productivity enhancers',
     icon: FaCode,
     items: [
-      { name: 'Git & Version Control', icon: FaGitAlt },
-      { name: 'Docker', icon: SiDocker },
-      { name: 'Postman', icon: SiPostman },
-      { name: 'Video Editing Workflows', icon: FaVideo },
+      { name: 'Git & GitHub', subtitle: 'Version Control', icon: FaGitAlt, color: 'text-orange-500' },
+      { name: 'VS Code', subtitle: 'Code Editor', icon: VscCode, color: 'text-sky-400' },
+      { name: 'Postman', subtitle: 'API Testing', icon: SiPostman, color: 'text-orange-400' },
+      { name: 'Docker', subtitle: 'Containerization', icon: SiDocker, color: 'text-sky-400' },
     ],
   },
 ];
