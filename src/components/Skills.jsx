@@ -16,7 +16,7 @@ export default function Skills() {
 
       <div className="relative mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
         <motion.div
-          className="overflow-hidden rouded-lg border border-indigo-200/80 bg-white/85 p-3 shadow-[0_20px_60px_rgba(8,145,178,0.16),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-2xl dark:!bg-[#0b1224]/80 dark:!bg-none dark:border-cyan-300/20 dark:shadow-[0_22px_80px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-5"
+          className="overflow-hidden rounded-lg border border-indigo-200/80 bg-white/85 p-3 shadow-[0_20px_60px_rgba(8,145,178,0.16),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-2xl dark:!bg-[#0b1224]/80 dark:!bg-none dark:border-cyan-300/20 dark:shadow-[0_22px_80px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-5"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
